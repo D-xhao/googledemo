@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>谷歌插件</title>
+	<style>
+		.phone{width: 100%;float: left;min-height: 100px;background-color: antiquewhite;margin-bottom: 20px;}
+		.phones{width: 47%;float: left;padding: 1%;}
+		.emails{width: 47%;float: right;padding: 1%;}
+		h3{margin-top: 0;font-size: 16px;width: 100%;float: left;border-bottom: 2px solid #fff;line-height: 35px;}
+		p{font-size: 14px;}
+		.hrefs{max-width: 70%;margin-top: 20px;height: 40px;line-height: 20px;float: right;word-wrap: break-word;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
+		strong{width: 100%;float: left;margin: 15px 0 0; font-size: 18px;line-height: 40px;height: 40px;}
+		.biao{display: block;width: 100%;float: left;}
+		.biao table{width: 100%;}
+		.biao tr{width: 100%;float: left;}
+		.biao tr:first-child,.biao tr:first-child td{height: 30px;line-height: 30px;}
+		.biao td{width: 50%;display: block;box-sizing: border-box;float: left;text-indent: 1em;height: 25px;line-height: 25px;}
+		.biao tr:nth-child(2n){background-color: rgb(235, 235, 235);}
+		.null{display: none;}
+		#export_Excel,#jiazai{float: right;cursor: pointer;border: 0;background-color: bisque;border-radius: 5px;height: 30px;line-height: 30px;padding: 0 15px;margin-left: 20px;}
+		#export_Excel:hover,#jiazai:hover{box-shadow: 0 0 5px #d4d4d4;transition: all .3s;}
+	</style>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+</head>
+<body style="width:500px;min-height:100px;">
+	<div class="logo">
+		<img src="images/icon.png" width="40" height="40" >
+		
+		<div class="hrefs">加载网址：<a href="#" title="在新页面打开此链接" id="hrefs"></a></div>
+		<span id="len"></span>
+	</div>
+	<strong>数据展示：<button type="button" id="export_Excel">导出表格为Excel</button><button type="button" id="jiazai">加载/刷新数据</button></strong>
+	<div style="width: 100%;float: left;">
+		<i style="color: red;">注：</i><small>数据显示异常或者不更新时请按F12查看控制台输出数据！经过前面处理后仍然不行请清理浏览器缓存再刷新</small>
+	</div>
+
+	<!-- 此处注释单独调试未转化为json格式的phone、email ，需要在popup.js文件将“普通输出数据”下面两段注释代码复原-->
+	<!-- <div class="phone">
+		<div class="phones">
+			<h3>phone</h3>
+			<span id="phone"></span>
+		</div>
+		
+		<div class="emails">
+			<h3>email</h3>
+			<span id="email"></span>
+		</div>
+	</div>
+	 -->
+
+
+	<div class="phone">
+	<!-- 表格数据 -->
+	<div class="biao">
+		<div id="biao"></div>
+		<p class="null">暂无数据！</p>
+	</div>
+</div>
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/xlsx.core.min.js"></script>
+	<script src="js/popup.js"></script>
+</body>
+</html>
